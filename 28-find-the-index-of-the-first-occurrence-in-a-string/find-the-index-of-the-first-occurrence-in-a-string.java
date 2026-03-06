@@ -1,7 +1,8 @@
 class Solution {
     public int strStr(String haystack, String needle) {
-        if (needle.isEmpty()) return 0;  // handle empty needle
-
+        if (needle.isEmpty()){
+           return 0; 
+        }
         char[] arr = haystack.toCharArray();
         char[] arr1 = needle.toCharArray();
 

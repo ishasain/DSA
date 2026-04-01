@@ -1,35 +1,20 @@
 class Solution {
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
-        // for (char ch : s.toCharArray()) {
-        //     if (ch == '{' || ch == '[' || ch == '(') {
-        //         stack.push(ch);
-        //     } else {
-        //         if (stack.isEmpty())
-        //             return false;
-            
-        //     char top = stack.pop();
-        //     if ((ch == ')' && top != '(' || ch == ']' && top != '[' || ch == '}' && top != '{')) {
-        //         return false;
-        //     }
-        //     }
-        // }
-        // return stack.isEmpty();
-        HashMap<Character,Character>map=new HashMap<>();
-          map.put('{','}');
-          map.put('[',']');
-          map.put('(',')');
-
-          for (char ch : s.toCharArray()){
-            if(map.containsKey(ch)){
-                stack.push(ch);
-            }
-            else{
-                if(stack.isEmpty()||map.get(stack.pop()) != ch){
-                    return false;
-                }
-            }
-          }
-          return stack.isEmpty();
+       Stack<Character>stack=new Stack<>();
+       HashMap<Character,Character>map=new HashMap<>();
+       map.put('(',')');
+       map.put('{','}');
+       map.put('[',']');
+      
+      for(char ch:s.toCharArray()){
+        if(map.containsKey(ch)){
+        stack.push(ch);
+        }
+        else{
+            if(stack.isEmpty()||map.get(stack.pop())!=ch)
+             return false;
+        }
+      }
+         return stack.isEmpty();
             }
 }

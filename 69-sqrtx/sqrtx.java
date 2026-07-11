@@ -18,6 +18,6 @@ class Solution {
             end=mid-1;
         }
        }
-       return end;
+       return ans;
     }
 }

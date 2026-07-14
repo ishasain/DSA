@@ -1,8 +1,10 @@
 class Solution {
     public int heightChecker(int[] heights) {
         int i,j,temp;
-        int[] expected = heights.clone();
-
+        int[] expected =new int[heights.length];
+        for(int k=0;k<heights.length;k++){
+            expected[k]=heights[k];
+        }
         // Bubble Sort
         int n = expected.length;
         boolean swapped;

@@ -1,15 +1,14 @@
 class Solution {
     public int countDigits(int num) {
-        int cp=num;
-        int count=0;
-     while(cp!=0){
-        int digit=cp%10;
-        if(num%digit==0){
-        count++;
+      return helper(num,num);
+    }
+    public int helper(int original,int n){
+        if(n==0)
+        return 0;
+        int digit=n%10;
+        if(digit!=0 && original%digit==0){
+            return 1+helper(original,n/10);
         }
-        cp=cp/10;
-     }   
-     return count;
-
+        return helper(original,n/10);
     }
 }
